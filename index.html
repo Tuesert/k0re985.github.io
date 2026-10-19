@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fff4f6">
-<title>小小星球 · 我的博客</title>
+<title>Jiangnan Northeast Surprise｜江南东北惊喜盲盒</title>
 <style>
 :root{--ink:#443b54;--pink:#ffd9e6;--yellow:#ffe99b;--blue:#ccecff;--mint:#d9f5df;--purple:#e8dcff;--paper:#fffdf8;--line:#eadff0}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Nunito","PingFang SC","Microsoft YaHei",sans-serif;background:#fffaf2;background-image:radial-gradient(#f4dce7 1.5px,transparent 1.5px);background-size:22px 22px}
@@ -17,11 +17,10 @@
 </head>
 <body>
 <div class="shell">
-<header class="topbar"><div class="brand"><div class="logo">🌷</div><span id="siteName">小小星球 · 我的博客</span></div><a class="btn primary" href="/admin/">✏️ 写日记 / 管理博客</a></header>
-<section class="hero"><h1 id="heroTitle">欢迎来到我的小小星球！☁️</h1><p id="heroDesc">这里收藏日常的小快乐、突然冒出来的奇思妙想，还有那些想认真记住的瞬间。</p><span class="sticker" id="heroSticker">🌈 今日份可爱已加载</span></section>
+<header class="topbar"><div class="brand"><div class="logo">🌷</div><span id="siteName">Jiangnan Northeast Surprise｜江南东北惊喜盲盒</span></div>
+<section class="hero"><h1 id="heroTitle">欢迎来到江南东北惊喜盲盒☁️</h1><p id="heroDesc">收录河北、灵石、东北、台州、嵊州等地的奇人异事，专注研究校园神人、爱情连续剧、贫穷文学与人类生活技能的极限。</p><span class="sticker" id="heroSticker">🌈 今日份奇葩已加载</span></section>
 <section class="toolbar"><div class="filters" id="filters"><button class="filter active" data-filter="全部">✨ 全部</button><button class="filter" data-filter="日常">🍓 日常</button><button class="filter" data-filter="灵感">💡 灵感</button><button class="filter" data-filter="旅行">🧳 旅行</button><button class="filter" data-filter="收藏">🎀 收藏</button></div><input class="search" id="searchInput" placeholder="🔎 搜索标题或内容……" aria-label="搜索文章"></section>
-<main class="grid" id="postGrid"><div class="empty">🪄 正在打开星球日记……</div></main>
-<footer>Made with ☁️ and a little bit of imagination · <a href="/admin/">博客管理后台</a></footer>
+<main class="grid" id="postGrid"><div class="empty">🪄 正在打开江南东北惊喜盲盒</div></main>
 </div>
 <div class="modal-backdrop" id="readerModal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="readerTitle"><div class="modal-head"><h2 id="readerTitle"></h2><button class="close" id="closeReader" aria-label="关闭">×</button></div><div class="meta"><span id="readerDate"></span><span id="readerCategory"></span></div><div class="reader-art" id="readerArt"></div><div class="reader-content" id="readerContent"></div></section></div>
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
@@ -30,7 +29,7 @@ const colors={日常:"#ffe0e9",灵感:"#e8ddff",旅行:"#d7efff",收藏:"#fff0b8
 let posts=[], activeFilter="全部";
 const $=id=>document.getElementById(id);
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function setSite(s){$("siteName").textContent=s.site_name||"小小星球 · 我的博客";document.title=s.site_name||"小小星球 · 我的博客";$("heroTitle").textContent=s.hero_title||"欢迎来到我的小小星球！☁️";$("heroDesc").textContent=s.hero_desc||"";$("heroSticker").textContent=s.hero_sticker||"🌈 今日份可爱已加载";posts=Array.isArray(s.posts)?s.posts:[];renderPosts();}
+function setSite(s){$("siteName").textContent=s.site_name||"小小星球 · 我的博客";document.title=s.site_name||"小小星球 · 我的博客";$("heroTitle").textContent=s.hero_title||"欢迎来到江南东北惊喜盲盒！☁️";$("heroDesc").textContent=s.hero_desc||"";$("heroSticker").textContent=s.hero_sticker||"🌈 今日份奇葩已加载";posts=Array.isArray(s.posts)?s.posts:[];renderPosts();}
 function renderPosts(){const q=$("searchInput").value.trim().toLowerCase();const visible=posts.filter(p=>(activeFilter==="全部"||p.category===activeFilter)&&(`${p.title||""} ${p.content||""} ${p.category||""}`).toLowerCase().includes(q));$("postGrid").innerHTML=visible.length?visible.map((p,i)=>{const image=p.cover?`<img src="${esc(p.cover)}" alt="">`:`<span>${esc(p.emoji||"🌷")}</span>`;return `<article class="post"><div class="post-art" style="background:${colors[p.category]||"#f0e5ff"}">${image}</div><div class="meta"><span>${esc(p.date||"")}</span><span>一颗小星星 ✦</span></div><h2>${esc(p.title||"无标题")}</h2><p>${esc(p.content||"")}</p><div class="post-bottom"><span class="tag">${esc(p.category||"日常")}</span><button class="mini" data-read="${i}">阅读 ↗</button></div></article>`}).join(""):`<div class="empty"><div style="font-size:42px">🧺</div><h2>这里暂时空空的</h2><p>去管理后台写下第一篇小故事吧。</p><a class="btn primary" href="/admin/">＋ 写一篇</a></div>`;}
 $("filters").addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;activeFilter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderPosts();});
 $("searchInput").addEventListener("input",renderPosts);
