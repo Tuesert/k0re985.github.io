@@ -1,0 +1,75 @@
+# Decap CMS + Decap Turbo hosted authentication.
+# After creating a site in Decap Turbo, replace the placeholder below with the Site ID.
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  branch: main
+
+locale: zh_Hans
+site_url: https://k0re985.github.io
+display_url: https://k0re985.github.io
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "site"
+    label: "主页与文章"
+    files:
+      - name: "homepage"
+        label: "主页设置与博客文章"
+        file: "content/site.yml"
+        fields:
+          - label: "网站名称"
+            name: "site_name"
+            widget: "string"
+            default: "小小星球 · 我的博客"
+          - label: "主页大标题"
+            name: "hero_title"
+            widget: "string"
+            default: "欢迎来到我的小小星球！☁️"
+          - label: "主页介绍"
+            name: "hero_desc"
+            widget: "text"
+            default: "这里收藏日常的小快乐、突然冒出来的奇思妙想，还有那些想认真记住的瞬间。请随意逛逛，记得给自己买一朵花。"
+          - label: "小贴纸文字"
+            name: "hero_sticker"
+            widget: "string"
+            default: "🌈 今日份可爱已加载"
+          - label: "博客文章"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.date}} · {{fields.title}}"
+            allow_add: true
+            collapsed: true
+            fields:
+              - label: "文章标题"
+                name: "title"
+                widget: "string"
+              - label: "发布日期"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+              - label: "分类"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "日常", value: "日常" }
+                  - { label: "灵感", value: "灵感" }
+                  - { label: "旅行", value: "旅行" }
+                  - { label: "收藏", value: "收藏" }
+              - label: "封面小图标"
+                name: "emoji"
+                widget: "select"
+                options: ["🌷", "🍓", "🌙", "🧸", "🪐", "🎀", "🍰", "🌈", "📚", "🧳", "☁️", "💌"]
+                default: "🌷"
+              - label: "封面图片（可选）"
+                name: "cover"
+                widget: "image"
+                required: false
+              - label: "正文"
+                name: "content"
+                widget: "markdown"
