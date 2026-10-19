@@ -1,10 +1,10 @@
-site_name: 小小星球 · 我的博客
-hero_title: 欢迎来到我的小小星球！☁️
+site_name: Jiangnan Northeast Surprise｜江南东北惊喜盲盒
+hero_title: 🍜 苏州水乡·东北来客离谱观测中心
 hero_desc: 这里收藏日常的小快乐、突然冒出来的奇思妙想，还有那些想认真记住的瞬间。请随意逛逛，记得给自己买一朵花。
-hero_sticker: 🌈 今日份可爱已加载
+hero_sticker: 💋😹🫩😛☺️🤓
 posts:
   - title: 把普通的一天过成草莓味
-    date: "2026-10-18"
+    date: 2026-10-18
     category: 日常
     emoji: 🍓
     cover: ""
@@ -14,7 +14,7 @@ posts:
 
       突然觉得，生活不一定要时时刻刻都很厉害。能发现一点点可爱，就已经很值得庆祝啦。🍓
   - title: 脑袋里住着一颗小星球
-    date: "2026-10-16"
+    date: 2026-10-16
     category: 灵感
     emoji: 🪐
     cover: ""
@@ -23,7 +23,7 @@ posts:
 
       先把它们写下来吧。以后回头看，可能会觉得好笑，也可能真的能做成什么有趣的东西。灵感不需要穿西装，它穿睡衣来也可以。
   - title: 给未来的自己一封信
-    date: "2026-10-12"
+    date: 2026-10-12
     category: 收藏
     emoji: 💌
     cover: ""
@@ -34,7 +34,7 @@ posts:
 
       如果你最近很累，先去吃点好吃的、睡个好觉。人生不是一场必须连续通关的游戏。
   - title: 想去有风的地方
-    date: "2026-10-09"
+    date: 2026-10-09
     category: 旅行
     emoji: 🧳
     cover: ""
@@ -43,7 +43,7 @@ posts:
 
       旅行计划暂时还没定，但期待本身也很好玩。
   - title: 今天的可爱收藏夹
-    date: "2026-10-05"
+    date: 2026-10-05
     category: 收藏
     emoji: 🎀
     cover: ""
