@@ -6,8 +6,8 @@ backend:
   branch: main
 
 locale: zh_Hans
-site_url: https://k0re985.github.io
-display_url: https://k0re985.github.io
+site_url: https://tuesert.github.io/k0re985.github.io
+display_url: https://tuesert.github.io/k0re985.github.io
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
