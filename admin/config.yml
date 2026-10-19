@@ -2,7 +2,7 @@
 # After creating a site in Decap Turbo, replace the placeholder below with the Site ID.
 backend:
   name: turbo-github
-  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  turbo_site_id: 4c7faa58-05aa-4741-a47c-f4d7d1f3b205
   branch: main
 
 locale: zh_Hans
